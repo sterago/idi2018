@@ -1,0 +1,7 @@
+before_script:
+  - python -V
+
+test:
+  script:
+  - nosetests
+
