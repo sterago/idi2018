@@ -4,11 +4,11 @@ before_script:
   - python -V
 
 test:
+  variables:
+    SELENIUM_HUB: 'selenium-grid'
   script:
   - pip install -r requirements.txt
-  - nosetests
-  variables:
-    SELENIUM_HUB: 'http://selenium-grid:4444/wd/hub'
+  - pytest --driver Remote --capability browserName chrome --host ${SELENIUM_HUB}
 
 
 

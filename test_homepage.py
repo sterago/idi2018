@@ -1,16 +1,17 @@
-from os import getenv
-
-from needle.cases import NeedleTestCase
-from needle.driver import NeedleRemote
-from selenium.webdriver import DesiredCapabilities
+from selenium.webdriver.common.by import By
+import pytest
 
 
-class HomepageTests(NeedleTestCase):
-    @classmethod
-    def get_web_driver(cls):
-        return NeedleRemote(desired_capabilities=DesiredCapabilities.CHROME,
-                            command_executor=getenv('SELENIUM_HUB'))
+@pytest.mark.element
+def test_example_element(needle):
+    """Example for comparing individual elements
 
-    def test_homepage(self):
-        self.driver.get('http://www.bbc.co.uk/news/')
-        self.assertScreenshot('#blq-mast', 'bbc-masthead')
+    :param NeedleDriver needle: NeedleDriver instance
+    :return:
+    """
+
+    # Navigate to web page
+    needle.driver.get('https://www.google.com')
+
+    # Take an element screen diff
+    needle.assert_screenshot('search_field', (By.ID, 'tsf'))
