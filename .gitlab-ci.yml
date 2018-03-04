@@ -7,5 +7,8 @@ test:
   script:
   - pip install -r requirements.txt
   - nosetests
+  variables:
+    SELENIUM_HUB: 'http://selenium-grid:4444/wd/hub/'
+
 
 
