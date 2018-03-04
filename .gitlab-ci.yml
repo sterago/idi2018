@@ -6,7 +6,5 @@ before_script:
 test:
   script:
   - nosetests
-  variables:
-    CI_DEBUG_TRACE: "true"
 
 
