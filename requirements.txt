@@ -1,3 +1,4 @@
 selenium
 needle
 pytest-needle
+pytest-flask

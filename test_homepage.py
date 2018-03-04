@@ -1,7 +1,9 @@
-from selenium.webdriver.common.by import By
 import pytest
+from selenium.webdriver.common.by import By
+from flask import url_for
 
 
+@pytest.mark.usefixtures('live_server')
 @pytest.mark.element
 def test_example_element(needle):
     """Example for comparing individual elements
@@ -11,7 +13,9 @@ def test_example_element(needle):
     """
 
     # Navigate to web page
-    needle.driver.get('https://www.google.com')
+
+    url = url_for('index', _external=True)
+    needle.driver.get(url)
 
     # Take an element screen diff
     needle.assert_screenshot('search_field', (By.ID, 'tsf'))
