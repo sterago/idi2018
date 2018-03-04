@@ -1,6 +1,7 @@
 version: '3'
 services:
   gitlab-server:
+    network_mode: bridge
     image: "gitlab/gitlab-ce:latest"
     hostname: "gitlab"
     ports:
@@ -11,6 +12,7 @@ services:
      - "/Users/srago/work/idi2018/gitlab/logs:/var/log/gitlab"
      - "/Users/srago/work/idi2018/gitlab/data:/var/opt/gitlab"
   gitlab-runner:
+    network_mode: bridge
     image: "gitlab/gitlab-runner:latest"
     volumes:
      - "/Users/srago/work/idi2018/gitlab-runner/config:/etc/gitlab-runner"
@@ -19,6 +21,7 @@ services:
      - gitlab-server
      - selenium-grid
   selenium-grid:
+    network_mode: bridge
     image: "selenium/standalone-chrome-debug:3.9.1-actinium"
     ports:
      - "4444:4444"
