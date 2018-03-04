@@ -9,8 +9,7 @@ test:
     CI_DEBUG_TRACE: "true"
   script:
   - pip install -r requirements.txt
-  - echo `hostname -I`
-  - pytest --driver Remote --capability browserName chrome --host ${SELENIUM_HUB}
+  - RUNNER_IP=`hostname -I` pytest --driver Remote --capability browserName chrome --host ${SELENIUM_HUB}
 
 
 
