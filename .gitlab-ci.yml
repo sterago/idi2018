@@ -6,6 +6,7 @@ before_script:
 test:
   variables:
     SELENIUM_HUB: 'selenium-grid'
+    CI_DEBUG_TRACE: "true"
   script:
   - pip install -r requirements.txt
   - pytest --driver Remote --capability browserName chrome --host ${SELENIUM_HUB}
