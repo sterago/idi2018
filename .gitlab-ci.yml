@@ -5,7 +5,5 @@ before_script:
 
 test:
   script:
-  - cat /etc/hosts
-  - cat /etc/resolv.conf
   - nosetests
 
