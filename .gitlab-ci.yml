@@ -12,4 +12,5 @@ test:
   artifacts:
       paths:
       - screenshots/
+      when: always
 
