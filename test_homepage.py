@@ -1,7 +1,4 @@
-from time import sleep
-
 import pytest
-from selenium.webdriver.common.by import By
 from flask import url_for
 
 
@@ -19,7 +16,5 @@ def test_example_element(needle):
     url = url_for('index', _external=True)
     needle.driver.get(url)
 
-    sleep(5)
-
     # Take an element screen diff
-    needle.assert_screenshot('search_field', (By.ID, 'tsf'))
+    needle.assert_screenshot('body', element_or_selector='body')
