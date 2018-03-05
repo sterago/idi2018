@@ -9,6 +9,7 @@ test:
   script:
   - pip install -r requirements.txt
   - RUNNER_IP=`hostname -I` pytest --driver Remote --capability browserName chrome --host ${SELENIUM_HUB} --needle-engine perceptualdiff test_homepage.py
-
-
+  artifacts:
+      paths:
+      - screenshots/
 
