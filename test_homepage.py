@@ -19,7 +19,7 @@ def test_example_element(needle):
     url = url_for('index', _external=True)
     needle.driver.get(url)
 
-    sleep(1000)
+    sleep(5)
 
     # Take an element screen diff
     needle.assert_screenshot('search_field', (By.ID, 'tsf'))
