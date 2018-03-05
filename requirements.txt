@@ -1,4 +1,4 @@
 selenium
 needle
 pytest-needle
-pytest-flask
+-e git+git@github.com:sterago/pytest-flask.git@custom_live_server_address#egg=pytest-flask
