@@ -47,6 +47,8 @@ production:
     url: https://production.local
   only:
   - master
+  tags:
+   - deployment
 
 stages:
   - install
