@@ -1,5 +1,3 @@
-image: sterago/idi2018
-
 before_script:
   - python -V
 
@@ -30,6 +28,7 @@ integration tests:
 
 visual tests:
   stage: visual tests
+  image: sterago/idi2018
   variables:
     SELENIUM_HUB: 'selenium-grid'
   script:
