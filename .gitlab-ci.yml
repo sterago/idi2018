@@ -3,7 +3,27 @@ image: sterago/idi2018
 before_script:
   - python -V
 
-test:
+install backend dependencies:
+  stage: install
+
+install frontend dependencies:
+  stage: install
+
+build frontend assets:
+  stage: build
+
+unit tests:
+  stage: unit and integration tests
+  script:
+  - echo "unit tests ran"
+
+integration tests:
+  stage: unit and integration tests
+  script:
+  - echo "integration tests ran"
+
+visual tests:
+  stage: visual tests
   variables:
     SELENIUM_HUB: 'selenium-grid'
   script:
@@ -13,3 +33,13 @@ test:
       - screenshots/
       when: always
 
+deploy:
+  script:
+  - echo "deploy"
+
+stages:
+  - install
+  - build
+  - unit and integration tests
+  - visual tests
+  - deploy
