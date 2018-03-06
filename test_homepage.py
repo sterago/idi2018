@@ -5,11 +5,6 @@ from flask import url_for
 @pytest.mark.usefixtures('live_server')
 @pytest.mark.element
 def test_homepage(needle):
-    """Example for comparing individual elements
-
-    :param NeedleDriver needle: NeedleDriver instance
-    :return:
-    """
 
     # Navigate to web page
 
