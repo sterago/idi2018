@@ -39,10 +39,15 @@ visual tests:
       - screenshots/
       when: always
 
-deploy:
+production:
   stage: deploy
   script:
-  - echo "deploy"
+    - echo "Deploy to production server"
+  environment:
+    name: production
+    url: https://production.local
+  only:
+  - master
 
 stages:
   - install
