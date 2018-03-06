@@ -42,6 +42,8 @@ production:
   stage: deploy
   script:
     - docker exec idi2018_production_1 /bin/bash -c "cd /app; git pull"
+    - docker exec idi2018_production_1 /bin/bash -c "uwsgi --reload /run/.pid"
+    - docker exec idi2018_production_1 /bin/bash -c "nginx -s reload"
   environment:
     name: production
     url: https://production.local
