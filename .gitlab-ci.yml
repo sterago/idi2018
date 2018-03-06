@@ -41,7 +41,7 @@ visual tests:
 production:
   stage: deploy
   script:
-    - echo "Deploy to production server"
+    - docker exec idi2018_production_1 /bin/bash -c "cd /app; git pull"
   environment:
     name: production
     url: https://production.local
