@@ -16,7 +16,5 @@ def test_homepage(needle):
     url = url_for('frontend.index', _external=True)
     needle.driver.get(url)
 
-    import ipdb; ipdb.set_trace()
-
     # Take an element screen diff
     needle.assert_screenshot('body', element_or_selector='body')
