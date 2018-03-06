@@ -5,12 +5,18 @@ before_script:
 
 install backend dependencies:
   stage: install
+  script:
+  - echo "installing backend dependencies"
 
 install frontend dependencies:
   stage: install
+  script:
+  - echo "installing frontend dependencies"
 
 build frontend assets:
   stage: build
+  script:
+  - echo "building frontend assets"
 
 unit tests:
   stage: unit and integration tests
@@ -34,6 +40,7 @@ visual tests:
       when: always
 
 deploy:
+  stage: deploy
   script:
   - echo "deploy"
 
