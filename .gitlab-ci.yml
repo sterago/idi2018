@@ -1,5 +1,3 @@
-before_script:
-  - python -V
 
 install backend dependencies:
   stage: install
@@ -37,6 +35,8 @@ visual tests:
       paths:
       - screenshots/
       when: always
+  tags:
+   - visual
 
 production:
   stage: deploy
