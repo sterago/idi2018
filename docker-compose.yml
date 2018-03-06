@@ -31,7 +31,13 @@ services:
      - "5900:5900"
     volumes:
      - "/dev/shm:/dev/shm"
-
-#  2241  sudo docker run --detach     --hostname gitlab     --publish 443:443 --publish 80:80 --publish 22:22     --name gitlab     --restart always     --volume /Users/srago/work/idi2018/gitlab/config:/etc/gitlab     --volume /Users/srago/work/idi2018/gitlab/logs:/var/log/gitlab     --volume /Users/srago/work/idi2018/gitlab/data:/var/opt/gitlab     gitlab/gitlab-ce:latest
-#  2295  docker run -d --name gitlab-runner --restart always -v /Users/srago/work/idi2018/gitlab-runner/config:/etc/gitlab-runner -v /var/run/docker.sock:/var/run/docker.sock gitlab/gitlab-runner:latest
-#  2262  docker run -d -p 4444:4444 -p 5900:5900 -v /dev/shm:/dev/shm selenium/standalone-chrome-debug:3.9.1-actinium
+  production:
+    network_mode: bridge
+    hostname: "production"
+    image: "sterago/alpine-flask"
+    ports:
+      - "8080:80"
+    links:
+     - gitlab-server
+    volumes:
+     - "/Users/srago/work/idi2018/app/:/app"
