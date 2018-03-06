@@ -2,7 +2,7 @@ from os import getenv
 
 import pytest
 
-from main import create_app
+from sample_app import create_app
 
 
 @pytest.fixture
