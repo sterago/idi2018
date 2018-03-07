@@ -41,11 +41,7 @@ visual tests:
 production:
   stage: deploy
   script:
-    - docker exec idi2018_production_1 /bin/bash -c "git config --global user.email 'stefanorago@gmail.com'"
-    - docker exec idi2018_production_1 /bin/bash -c "git config --global user.name 'Stefano Rago'"
-    - docker exec idi2018_production_1 /bin/bash -c "cd /app; git pull --force"
-    - docker exec idi2018_production_1 /bin/bash -c "uwsgi --reload /run/.pid"
-    - docker exec idi2018_production_1 /bin/bash -c "nginx -s reload"
+    - docker exec idi2018_production_1 /bin/bash -c "cd /app; git pull"
   environment:
     name: production
     url: https://production.local
