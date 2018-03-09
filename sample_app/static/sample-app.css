@@ -1,3 +1,8 @@
 .jumbotron {
   margin-top: 1em;
 }
+
+
+a {
+  color: blue !important;
+}
